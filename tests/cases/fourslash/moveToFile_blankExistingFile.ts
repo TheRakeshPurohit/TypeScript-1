@@ -18,8 +18,10 @@ verify.moveToFile({
 `,
 
         "/bar.ts":
-`import { b } from './other';
+`//
 import { p } from './a';
+import { b } from './other';
+
 
 const y: Date = p + b;
 `,

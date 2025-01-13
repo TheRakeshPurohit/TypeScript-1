@@ -1,3 +1,5 @@
+//// [tests/cases/conformance/jsdoc/templateInsideCallback.ts] ////
+
 //// [templateInsideCallback.js]
 /**
  * @typedef Oops
@@ -112,7 +114,21 @@ function flatMap(array, iterable) {
 
 
 //// [templateInsideCallback.d.ts]
+/**
+ * @overload
+ * @template T
+ * @template U
+ * @param {T[]} array
+ * @param {(x: T) => U[]} iterable
+ * @returns {U[]}
+ */
 declare function flatMap<U>(): any;
+/**
+ * @overload
+ * @template T
+ * @param {T[][]} array
+ * @returns {T[]}
+ */
 declare function flatMap(): any;
 /**
  * @typedef Oops
@@ -130,7 +146,7 @@ declare function flatMap(): any;
  * @template T
  * @type {Call<T>}
  */
-declare const identity: any;
+declare const identity: Call<T>;
 type Nested = {
     oh: {
         no: number;
