@@ -1,3 +1,5 @@
+//// [tests/cases/compiler/declarationEmitNoNonRequiredParens.ts] ////
+
 //// [declarationEmitNoNonRequiredParens.ts]
 export enum Test {
     A, B, C
@@ -5,7 +7,7 @@ export enum Test {
 
 export type TestType = typeof Test;
 
-export const bar = (null as TestType[Extract<keyof TestType, string>][]);
+export const bar = null! as TestType[Extract<keyof TestType, string>][] satisfies any;
 
 //// [declarationEmitNoNonRequiredParens.js]
 "use strict";

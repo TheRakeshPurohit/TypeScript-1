@@ -1,12 +1,17 @@
-=== tests/cases/conformance/jsdoc/typedefOnSemicolonClassElement.js ===
+//// [tests/cases/conformance/jsdoc/typedefOnSemicolonClassElement.ts] ////
+
+=== typedefOnSemicolonClassElement.js ===
 export class Preferences {
 >Preferences : Preferences
+>            : ^^^^^^^^^^^
 
   /** @typedef {string} A */
   ;
   /** @type {A} */
   a = 'ok'
 >a : string
+>  : ^^^^^^
 >'ok' : "ok"
+>     : ^^^^
 }
 
